@@ -3,7 +3,7 @@
 //  CrashlyticsDemo
 //
 //  Created by fwzhou on 2017/7/17.
-//  Copyright © 2017年 chinaums. All rights reserved.
+//  Copyright © 2017年 fwzhou. All rights reserved.
 //
 
 #import "CompositionAudio.h"
@@ -103,11 +103,11 @@
     [track insertTimeRanges:timeRangeArr ofTracks:trackArr atTime:kCMTimeZero error:&error];
     
     AVAssetExportSession *session = [[AVAssetExportSession alloc] initWithAsset:composition presetName:AVAssetExportPresetAppleM4A];
-    NSString *UMSAudioPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/UMSAudio"];
-    NSString *outPutFilePath = [UMSAudioPath stringByAppendingPathComponent:@"xindong.m4a"];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:UMSAudioPath]) {
+    NSString *fwzhouAudioPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/fwzhouAudio"];
+    NSString *outPutFilePath = [fwzhouAudioPath stringByAppendingPathComponent:@"xindong.m4a"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:fwzhouAudioPath]) {
         NSError *error;
-        [[NSFileManager defaultManager] createDirectoryAtPath:UMSAudioPath withIntermediateDirectories:NO attributes:nil error:&error];
+        [[NSFileManager defaultManager] createDirectoryAtPath:fwzhouAudioPath withIntermediateDirectories:NO attributes:nil error:&error];
     } else {
         if ([[NSFileManager defaultManager] fileExistsAtPath:outPutFilePath]) {
             [[NSFileManager defaultManager] removeItemAtPath:outPutFilePath error:nil];
